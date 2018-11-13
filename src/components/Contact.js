@@ -1,11 +1,12 @@
 import React from 'react';
 
 const imageStyle = { maxWidth: '40px' }
-const Contact = props => (
+
+const Contact = ({ first, last, email, avatar }) => (
   <div>
-    <img style={imageStyle} src={props.avatar} alt={ `Avatar de ${props.first}` } />
+    <img style={imageStyle} src={avatar} alt={ `Avatar de ${first}` } />
     <div>
-      <span>{props.first} {props.last} {props.email}</span>
+      <span>{first} {last} {email}</span>
     </div>
   </div>
 )
