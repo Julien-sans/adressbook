@@ -1,5 +1,4 @@
 import React from 'react';
-
 const imageStyle = { maxWidth: '40px' }
 
 const Contact = ({ first, last, email, avatar }) => (
