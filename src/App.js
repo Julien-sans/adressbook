@@ -24,8 +24,7 @@ class App extends Component {
   })
 
   render() {
-    const { showSidebar } = this.state;
-    const { showContactIndex } = this.state;
+    const { showSidebar, showContactIndex } = this.state;
     return (
       <div>
         <button onClick= {this.toggleSidebar}>Sidebar { showSidebar ? 'ON' : 'OFF'}</button>
@@ -34,6 +33,7 @@ class App extends Component {
             <Contact
               key={contact.id}
               {...contact}
+              selected={index === showContactIndex}
               onSelectContact={() => this.selectContact(index)}
             />
         ))
