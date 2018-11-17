@@ -7,7 +7,7 @@ const Sidebar = ({ show }) => (
       position: 'fixed',
       top: 0,
       right: show ? '0' : '-250px',
-      padding: show ? '20px' : '20px 0',
+      padding: '20px',
       width: '250px',
       height: '100vh',
       background: '#eee',
