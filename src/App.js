@@ -18,9 +18,10 @@ class App extends Component {
   })
 
   render() {
+    const { showSidebar } = this.state;
     return (
       <div>
-        <button onClick= {this.toggleSidebar}>Sidebar { this.state.showSidebar ? 'ON' : 'OFF'}</button>
+        <button onClick= {this.toggleSidebar}>Sidebar { showSidebar ? 'ON' : 'OFF'}</button>
         {
           contacts.map(contact => {
             return(
@@ -31,9 +32,7 @@ class App extends Component {
           )
           })
         }
-        {
-          this.state.showSidebar ? <Sidebar /> : ''
-        }
+          <Sidebar show={showSidebar} />
       </div>
     );
   }

@@ -1,22 +1,21 @@
 import React from 'react';
 
-const sidebarStyle = {
-  position: 'fixed',
-  top: 0,
-  right: 0,
-  padding: '20px',
-  width: '250px',
-  height: '100vh',
-  background: 'grey',
-  //transition: 'width 
-}
 
-const Sidebar = () => {
-  return(
-    <div style={sidebarStyle}>
+
+const Sidebar = ({ show }) => (
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      right: show ? '0' : '-250px',
+      padding: show ? '20px' : '20px 0',
+      width: '250px',
+      height: '100vh',
+      background: '#eee',
+      boxSizing : 'border-box',
+      transition: 'right 0.5s'
+    }}>
       Ma barre latérale
     </div>
-  )
-}
+)
 
 export default Sidebar;
