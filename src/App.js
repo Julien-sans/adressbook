@@ -4,6 +4,8 @@ import Contact from './components/Contact';
 import ContactDetails from './components/Contactdetails';
 import contacts from './data/contacts';
 import Sidebar from './components/Sidebar';
+import './App.css'
+import AddContact from './components/AddContact';
 
 class App extends Component {
 
@@ -26,8 +28,8 @@ class App extends Component {
   render() {
     const { showSidebar, showContactIndex } = this.state;
     return (
-      <div>
-        <button onClick= {this.toggleSidebar}>Sidebar { showSidebar ? 'ON' : 'OFF'}</button>
+      <div className="App">
+        <button className="toggle" onClick= {this.toggleSidebar}>Sidebar { showSidebar ? 'ON' : 'OFF'}</button>
         {
           contacts.map((contact, index) => (
             <Contact
@@ -36,10 +38,11 @@ class App extends Component {
               selected={index === showContactIndex}
               onSelectContact={() => this.selectContact(index)}
             />
-        ))
+          ))
         }
-          <ContactDetails {...contacts[showContactIndex]} />
-          <Sidebar show={showSidebar} />
+        <ContactDetails {...contacts[showContactIndex]} />
+        <Sidebar show={showSidebar} />
+        <AddContact />
       </div>
     );
   }
