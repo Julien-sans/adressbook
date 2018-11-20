@@ -6,38 +6,71 @@ class AddContact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      first: '',
-      last: '',
+      first: 'Julien',
+      last: 'Sans',
       email: '',
       bio: '',
       avatar: ''
     }
   }
 
-  handleChangeFirstName = event => {
+  handleChange = event => {
     this.setState({
-      first: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
   render() {
+    const { first, last, email, bio, avatar } = this.state;
     return(
       <form>
 
         <label htmlFor="firstName">First name</label>
-        <input onChange={this.handleChangeFirstName} type="text" id="firstName" placeholder="First name" />
+        <input
+          onChange={this.handleChange}
+          value={first}
+          type="text"
+          id="firstName"
+          placeholder="First name"
+          name="first"
+        />
 
-        <label htmlFor="firstName">Last name</label>
-        <input type="text" id="lastName" placeholder="Last name" />
+        <label htmlFor="lastName">Last name</label>
+        <input
+          onChange={this.handleChange}
+          value={last}
+          type="text"
+          id="lastName"
+          placeholder="Last name"
+          name="last"
+        />
 
-        <label htmlFor="firstName">Email</label>
-        <input type="email" id="email" placeholder="Email" />
+        <label htmlFor="email">Email</label>
+        <input
+          onChange={this.handleChange}
+          value={email}
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+        />
 
         <label htmlFor="bio">Bio</label>
-        <textarea id="bio" placeholder="Enter a few words about you" />
+        <textarea
+          onChange={this.handleChange}
+          value={bio}
+          name="bio"
+          id="bio"
+          placeholder="Enter a few words about you" />
 
         <label htmlFor="avatar">Avatar URL</label>
-        <input type="text" id="avatar" placeholder="Avatar" />
+        <input
+          onChange={this.handleChange}
+          value={avatar}
+          name="avatar"
+          type="text"
+          id="avatar"
+          placeholder="Avatar" />
 
       </form>
     )
